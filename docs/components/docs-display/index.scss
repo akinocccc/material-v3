@@ -1,0 +1,17 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 10px;
+  justify-content: space-around;
+  .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 120px;
+    margin: 10px 0;
+    padding: 20px 0;
+    border: 2px solid #c2c2c2;
+    border-radius: 4px;
+  }
+}
