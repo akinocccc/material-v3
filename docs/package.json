@@ -1,9 +1,9 @@
 {
-  "name": "@animation-ui/docs",
+  "name": "@material-vue3/docs",
   "version": "0.0.1",
-  "description": "animaton-ui document",
+  "description": "material-vue3's document",
   "main": "index.js",
-  "repository": "https://github.com/vkm0303/animation-ui/docs",
+  "repository": "https://github.com/akinocccc/material-vue3/docs",
   "author": "akino",
   "license": "MIT",
   "private": false,

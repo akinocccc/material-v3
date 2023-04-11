@@ -6,7 +6,7 @@ module.exports = {
   description: "Make it interesting",
   lang: "zh-CN",
   cleanUrls: "without-subfolders",
-  base: env === "dev" ? "/" : "/animation-ui",
+  base: env === "dev" ? "/" : "/material-vue3",
   themeConfig: {
     siteTitle: "ui-library-vue3-starter",
     repo: "FE-Alog/ui-library-vue3-starter",
@@ -14,7 +14,7 @@ module.exports = {
     docsDir: "./",
     docsBranch: "master",
     editLink: {
-      pattern: "https://github.com/vkm0303/animation-ui/docs/:path",
+      pattern: "https://github.com/vkm0303/material-vue3/docs/:path",
       text: "Edit this page on GitHub",
     },
     lastUpdated: "Update Date",
@@ -24,7 +24,10 @@ module.exports = {
       "/examples/": sidebarComponent(),
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/FE-Alog/ui-library-vue3-starter" },
+      {
+        icon: "github",
+        link: "https://github.com/FE-Alog/ui-library-vue3-starter",
+      },
     ],
     footer: {
       message: "Released under the MIT License.",
@@ -66,9 +69,7 @@ function sidebarComponent() {
   return [
     {
       text: "Loading",
-      items: [
-        { text: "loading", link: "/examples/loading/loading" },
-      ],
-    }
+      items: [{ text: "loading", link: "/examples/loading/loading" }],
+    },
   ];
 }

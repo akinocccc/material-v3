@@ -1,5 +1,5 @@
 {
-  "name": "ui-library-vue3-starter",
+  "name": "@material-vue3/core",
   "packageManager": "pnpm@7.12.1",
   "private": "true",
   "version": "0.0.1",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "author": "akino",
-  "repository": "https://github.com/vkm0303/animation-ui",
+  "repository": "https://github.com/akinocccc/material-vue3.git",
   "workspaces": [
     "packages/*",
     "example",
