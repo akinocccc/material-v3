@@ -17,9 +17,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./packages/*"],
-      "@components/*": ["./packages/components/*"],
-      "@utils/*": ["./packages/utils/*"]
+      "@material/*": ["./packages/*"]
     }
   },
   "include": [

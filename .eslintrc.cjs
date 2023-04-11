@@ -23,7 +23,7 @@ module.exports = {
   },
   settings: {
     "import/resolver": {
-      alias: [["@", "./packages"]],
+      alias: [["@material", "./packages"]],
     },
   },
 };

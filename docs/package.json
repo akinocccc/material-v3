@@ -1,9 +1,9 @@
 {
-  "name": "@animation-ui/docs",
+  "name": "@material-v3/docs",
   "version": "0.0.1",
-  "description": "animaton-ui document",
+  "description": "material-v3's document",
   "main": "index.js",
-  "repository": "https://github.com/vkm0303/animation-ui/docs",
+  "repository": "https://github.com/akinocccc/material-v3/docs",
   "author": "akino",
   "license": "MIT",
   "private": false,
@@ -13,7 +13,10 @@
     "docs:serve": "vitepress serve"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.9.1",
+    "@algolia/client-search": "^4.17.0",
+    "@material-v3/packages": "workspace:^0.0.1",
+    "@vitepress-demo-preview/component": "^2.3.0",
+    "@vitepress-demo-preview/plugin": "^1.1.9",
     "vue": "^3.2.41"
   },
   "devDependencies": {

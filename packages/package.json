@@ -1,5 +1,5 @@
 {
-  "name": "@animation-ui/core",
+  "name": "@material-v3/packages",
   "version": "0.0.1",
   "description": "all components are settled here",
   "main": "index.ts",

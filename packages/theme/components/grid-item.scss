@@ -1,0 +1,62 @@
+@use "sass:math";
+@use "sass:map";
+@use "../common/var" as *;
+@use "../tools/col" as *;
+@use "../tools/mixins" as *;
+
+$size: xs, sm, md, lg, xl;
+$maxSize: (
+  xs: sm,
+  sm: md,
+  md: lg,
+  lg: xl,
+);
+
+[class*="#{$namespace}-grid-item"] {
+  box-sizing: border-box;
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+.#{$namespace}-grid-item {
+  max-width: calc(
+    1 / get-css-var("grid", "columns") * get-css-var("grid-item", "span") * 100 *
+      1%
+  );
+  flex: 0 0
+    calc(
+      1 / get-css-var("grid", "columns") * get-css-var("grid-item", "span") *
+        100 * 1%
+    );
+  padding: calc(get-css-var("grid", "row-gap") / 2)
+    calc(get-css-var("grid", "col-gap") / 2);
+  margin-left: calc(
+    100% * get-css-var("grid-item", "offset") / get-css-var("grid", "columns")
+  );
+  @include col-hidden();
+}
+
+@each $s in $size {
+  @include col-size($s);
+}
+
+// @for $i from 0 through 12 {
+//   .#{$namespace}-grid-item-#{$i} {
+//     max-width: (math.div(1, 12) * $i * 100) * 1%;
+//     flex: 0 0 (math.div(1, 12) * $i * 100) * 1%;
+//   }
+
+// .#{$namespace}-col-offset-#{$i} {
+//   margin-left: (math.div(1, 24) * $i * 100) * 1%;
+// }
+
+// .#{$namespace}-col-pull-#{$i} {
+//   position: relative;
+//   right: (math.div(1, 24) * $i * 100) * 1%;
+// }
+
+// .#{$namespace}-col-push-#{$i} {
+//   position: relative;
+//   left: (math.div(1, 24) * $i * 100) * 1%;
+// }
+// }

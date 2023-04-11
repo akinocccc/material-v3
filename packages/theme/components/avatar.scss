@@ -1,0 +1,107 @@
+@use "sass:map";
+@use "sass:color";
+
+@use "../tools/mixins" as *;
+@use "../tools/var" as *;
+@use "../common/var" as *;
+@use "../common/transition" as *;
+
+@include b(avatar) {
+  @include set-component-css-var("avatar", $avatar);
+  @include set-component-css-var("avatar-size", $avatar-size);
+
+  @include set-css-var-value(
+    ("avatar", "size"),
+    map.get($avatar-size, "default")
+  );
+
+  width: get-css-var("avatar", "size");
+  min-width: get-css-var("avatar", "size");
+  height: get-css-var("avatar", "size");
+  margin: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  user-select: none;
+  position: relative;
+  border-radius: get-css-var("avatar", "size");
+  background-color: get-css-var("avatar", "bg-color");
+  transition: $md-transition-default;
+  transition-property: color, background-color;
+  will-change: color, background-color;
+  color: map.get($avatar, "text-color");
+  font-size: map.get($avatar, "text-size");
+  letter-spacing: -0.05em;
+  vertical-align: middle;
+
+  @include m(circle) {
+    border-radius: 50%;
+  }
+
+  @include m(square) {
+    border-radius: get-css-var("avatar", "border-radius");
+  }
+
+  @include m(icon) {
+    font-size: get-css-var("avatar", "icon-size");
+  }
+
+  @each $size in (small, large) {
+    @include m($size) {
+      @include set-css-var-value(
+        ("avatar", "size"),
+        map.get($avatar-size, $size)
+      );
+    }
+  }
+}
+
+// .md-avatar {
+//   .md-icon {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     display: block;
+//   }
+
+//   .md-ripple {
+//     cursor: pointer;
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+//     border-radius: 50%;
+//   }
+// }
+
+// .md-large {
+//   min-width: $md-avatar-large-size;
+//   min-height: $md-avatar-large-size;
+//   font-size: $md-avatar-large-icon - 8px;
+
+//   img {
+//     border-radius: $md-avatar-large-size;
+//   }
+
+//   .md-icon {
+//     font-size: $md-avatar-large-icon !important;
+//   }
+// }
+
+// .md-small {
+//   width: $md-avatar-small-size;
+//   min-width: $md-avatar-small-size;
+//   height: $md-avatar-small-size;
+//   border-radius: $md-avatar-small-size;
+//   font-size: $md-avatar-small-icon - 2px;
+
+//   .md-icon {
+//     font-size: $md-avatar-small-icon !important;
+//   }
+// }

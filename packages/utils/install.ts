@@ -1,5 +1,7 @@
 import type { AppContext } from "vue";
+import { NOOP } from "@vue/shared";
 import type { App, Plugin } from "@vue/runtime-core";
+// import material from "./material";
 
 export type SFCWithInstall<T> = T & Plugin;
 
@@ -13,7 +15,7 @@ export const withInstall = <T, E extends Record<string, any>>(
 ) => {
   (main as SFCWithInstall<T>).install = (app): void => {
     for (const comp of [main, ...Object.values(extra ?? {})]) {
-      app.component(comp.name, comp);
+      app.component(comp.__name, comp);
     }
   };
 
@@ -27,10 +29,19 @@ export const withInstall = <T, E extends Record<string, any>>(
 
 export const makeInstaller = (components: Plugin[] = []) => {
   const install = (app: App) => {
+    console.log(components);
     components.forEach((c) => app.use(c));
+    // material(app);
   };
 
   return {
     install,
+    version: "__VERSION__",
   };
+};
+
+export const withNoopInstall = <T>(component: T) => {
+  (component as SFCWithInstall<T>).install = NOOP;
+
+  return component as SFCWithInstall<T>;
 };

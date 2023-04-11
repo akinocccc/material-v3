@@ -1,0 +1,39 @@
+@use "config";
+
+// md-bem('block', 'element', 'modifier') => 'md-block__element--modifier'
+@function md-bem($block, $element: "", $modifier: "") {
+  $name: config.$namespace + config.$common-separator + $block;
+
+  @if $element != "" {
+    $name: $name + config.$element-separator + $element;
+  }
+
+  @if $modifier != "" {
+    $name: $name + config.$modifier-separator + $modifier;
+  }
+
+  // @debug $name;
+  @return $name;
+}
+
+// join var name
+// joinVarName(('button', 'text-color')) => '--md-button-text-color'
+@function join-var-name($list) {
+  $name: "--" + config.$namespace;
+  @each $item in $list {
+    @if $item != "" {
+      $name: $name + "-" + $item;
+    }
+  }
+  @return $name;
+}
+
+// get_css_var_name('button', 'text-color') => '--md-button-text-color'
+@function get_css_var_name($args...) {
+  @return join_var_name($args);
+}
+
+// get-css-var('button', 'text-color') => var(--md-button-text-color)
+@function get-css-var($args...) {
+  @return var(#{join-var-name($args)});
+}

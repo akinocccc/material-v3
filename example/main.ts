@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import AniUI from "@animation-ui/core";
+import MaterialUI from "@material-v3/packages";
 import App from "./app.example.vue";
 
-createApp(App).use(AniUI).mount("#play");
+createApp(App).use(MaterialUI).mount("#play");

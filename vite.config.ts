@@ -23,9 +23,12 @@ export default defineConfig({
   plugins: [vue(), dts({ include: "./packages" }), vueSetupExtend()],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./packages"),
-      "@components": resolve(__dirname, "./packages/components"),
-      "@utils": resolve(__dirname, "./packages/utils"),
+      "@material": resolve(__dirname, "./packages"),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {},
     },
   },
 });
