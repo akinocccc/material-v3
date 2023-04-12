@@ -24,8 +24,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "./packages"),
+      "@base": resolve(__dirname, "./packages/base"),
+      "@core": resolve(__dirname, "./packages/core"),
+      "@theme": resolve(__dirname, "./packages/theme"),
       "@components": resolve(__dirname, "./packages/components"),
       "@utils": resolve(__dirname, "./packages/utils"),
     },
   },
+  css: {},
 });
