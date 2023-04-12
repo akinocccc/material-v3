@@ -1,5 +1,6 @@
 import type { AppContext } from "vue";
 import type { App, Plugin } from "@vue/runtime-core";
+import material from "./material";
 
 export type SFCWithInstall<T> = T & Plugin;
 
@@ -27,10 +28,12 @@ export const withInstall = <T, E extends Record<string, any>>(
 
 export const makeInstaller = (components: Plugin[] = []) => {
   const install = (app: App) => {
+    material(app);
     components.forEach((c) => app.use(c));
   };
 
   return {
     install,
+    version: "__VERSION__",
   };
 };
