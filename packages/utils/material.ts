@@ -1,8 +1,10 @@
 import { proxyRefs } from "@vue/runtime-core";
 import type { App } from "@vue/runtime-core";
-import "@base/index.scss";
-import MdTheme from "@/core/MdTheme";
-console.log(MdTheme.data);
+// import "@material/base/index.scss";
+import useTheme from "@material/hooks/useTheme";
+
+const { enabled, metaColors, theme } = useTheme();
+
 const init = () => {
   const material = proxyRefs({
     ripple: true,
@@ -75,21 +77,21 @@ const init = () => {
 
   Object.defineProperties(material.theming, {
     enabled: {
-      get: () => MdTheme.data.enabled,
-      set(enabled: any) {
-        MdTheme.data.enabled = enabled;
+      get: () => enabled.value,
+      set(newValue: boolean) {
+        enabled.value = newValue;
       },
     },
     metaColors: {
-      get: () => MdTheme.data.metaColors,
-      set(metaColors: any) {
-        MdTheme.data.metaColors = metaColors;
+      get: () => metaColors.value,
+      set(newValue: boolean) {
+        metaColors.value = newValue;
       },
     },
     theme: {
-      get: () => MdTheme.data.theme,
-      set(theme: any) {
-        MdTheme.data.theme = theme;
+      get: () => theme.value,
+      set(newTheme: string) {
+        theme.value = newTheme;
       },
     },
   });
