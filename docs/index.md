@@ -1,7 +1,10 @@
 ---
 layout: home
 hero:
-  name: A ui library starter for vue.js 3
+  image:
+    src: /logo.png
+    alt: Logo
+  name: Vue3-Material
   # text: The interesting ui components.
   tagline: Make it interesting.
   actions:
@@ -10,16 +13,16 @@ hero:
       link: /guide/introduction
     - theme: alt
       text: View on GitHub
-      link: https://github.com/akinoccc/material-vue3
+      link: https://github.com/akinocccc/material-vue3
 features:
-  - icon:
+  - icon: ✨
     title: Beatiful
     details: Lorem ipsum...
-  - icon:
+  - icon: 🎊
     title: Approachable
     details: It's easy to install and use.
-  - icon:
+  - icon: 🎃
     title: Abundant
     details: Every component contains muitiple animate type.
-footer: MIT Licensed | Copyright © 2022 Akino Chen
+footer: MIT Licensed | Copyright © 2023-present Akino Chen
 ---
