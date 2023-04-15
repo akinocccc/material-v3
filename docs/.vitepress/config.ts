@@ -11,28 +11,28 @@ module.exports = {
   description: "Make it interesting",
   lang: "en-US",
   cleanUrls: "without-subfolders",
-  base: env === "dev" ? "/" : "/material-vue3",
+  base: env === "dev" ? "/" : "/material-v3",
   themeConfig: {
     logo: "/logo.svg",
-    siteTitle: "Material-Vue3",
-    repo: "akinocccc/material-vue3",
+    siteTitle: "material-v3",
+    repo: "akinocccc/material-v3",
     // repoLabel: "测试",
     docsDir: "./",
     docsBranch: "master",
     editLink: {
-      pattern: "https://github.com/akinocccc/material-vue3/docs/:path",
+      pattern: "https://github.com/akinocccc/material-v3/docs/:path",
       text: "Edit this page on GitHub",
     },
     lastUpdated: "Update Date",
     nav: nav(),
     sidebar: {
       "/guide/": sidebarGuide(),
-      "/examples/": sidebarComponent(),
+      "/components/": sidebarComponent(),
     },
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/akinocccc/material-vue3",
+        link: "https://github.com/akinocccc/material-v3",
       },
     ],
     footer: {
@@ -57,8 +57,8 @@ function nav() {
     },
     {
       text: "Components",
-      link: "/examples/data/avatar",
-      activeMatch: "/examples/",
+      link: "/components/data/avatar",
+      activeMatch: "/components/",
     },
   ];
 }
@@ -80,8 +80,12 @@ function sidebarGuide() {
 function sidebarComponent() {
   return [
     {
+      text: "Basic",
+      items: [{ text: "Layout", link: "/components/basic/layout" }],
+    },
+    {
       text: "Data Display",
-      items: [{ text: "Avatar", link: "/examples/data/avatar" }],
+      items: [{ text: "Avatar", link: "/components/data/avatar" }],
     },
   ];
 }

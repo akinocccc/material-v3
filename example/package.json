@@ -1,5 +1,5 @@
 {
-  "name": "@material-vue3/example",
+  "name": "@material-v3/example",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@material-vue3/core": "workspace:^0.0.1",
+    "@material-v3/packages": "workspace:^0.0.1",
     "vue": "^3.2.37"
   },
   "devDependencies": {

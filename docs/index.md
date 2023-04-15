@@ -13,7 +13,7 @@ hero:
       link: /guide/introduction
     - theme: alt
       text: View on GitHub
-      link: https://github.com/akinocccc/material-vue3
+      link: https://github.com/akinocccc/material-v3
 features:
   - icon: ✨
     title: Beatiful

@@ -4,7 +4,7 @@ import {
   AntDesignContainer,
   NaiveUIContainer,
 } from "@vitepress-demo-preview/component";
-import Material from "@material-vue3/packages";
+import Material from "@material-v3/packages";
 import "@vitepress-demo-preview/component/dist/style.css";
 import "@material/theme/index.scss";
 import "./style/index.scss";
