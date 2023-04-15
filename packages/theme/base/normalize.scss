@@ -1,4 +1,4 @@
-@import "@components/MdAnimation/variables";
+@use "../common/transition.scss" as *;
 
 /**
  * Structure - The main styles for html and body tags
@@ -13,7 +13,7 @@
 html {
   height: 100%;
   box-sizing: border-box;
-  transition: background-color .3s $md-transition-stand-timing;
+  transition: background-color 0.3s $md-transition-stand-timing;
 }
 
 body {
@@ -26,20 +26,19 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: Roboto, 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  @extend .md-body-1;
+  font-family: Roboto, "Noto Sans", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  @extend .md-body-1 !optional;
 }
-
 
 /**
  * Overrides - Default buttons
  */
 
 a:not(.md-button) {
-  transition: .3s $md-transition-stand-timing;
+  transition: 0.3s $md-transition-stand-timing;
   transition-property: color, background-color, opacity;
 }
-
 
 /**
  * Overrides - Apply fluid media styles
@@ -60,7 +59,6 @@ iframe {
     height: auto;
   }
 }
-
 
 /**
  * Suppress the focus outline on links that cannot be accessed via keyboard.
