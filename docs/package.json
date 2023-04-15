@@ -13,7 +13,10 @@
     "docs:serve": "vitepress serve"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.9.1",
+    "@algolia/client-search": "^4.17.0",
+    "@material-vue3/packages": "workspace:^0.0.1",
+    "@vitepress-demo-preview/component": "^2.3.0",
+    "@vitepress-demo-preview/plugin": "^1.1.9",
     "vue": "^3.2.41"
   },
   "devDependencies": {

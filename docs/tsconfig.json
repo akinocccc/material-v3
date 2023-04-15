@@ -14,7 +14,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./*"],
-      "@components/*": ["./components/*"]
+      "@material/*": ["../packages/*"]
     },
     "jsx": "preserve"
   },

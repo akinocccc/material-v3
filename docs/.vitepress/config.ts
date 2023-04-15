@@ -1,20 +1,26 @@
+import {
+  componentPreview,
+  containerPreview,
+} from "@vitepress-demo-preview/plugin";
+
 const { argv } = process;
 const env = argv[argv.length - 1];
 
 module.exports = {
-  title: "Animation UI",
+  title: "Material Vue3",
   description: "Make it interesting",
-  lang: "zh-CN",
+  lang: "en-US",
   cleanUrls: "without-subfolders",
   base: env === "dev" ? "/" : "/material-vue3",
   themeConfig: {
-    siteTitle: "ui-library-vue3-starter",
-    repo: "FE-Alog/ui-library-vue3-starter",
+    logo: "/logo.svg",
+    siteTitle: "Material-Vue3",
+    repo: "akinocccc/material-vue3",
     // repoLabel: "测试",
     docsDir: "./",
     docsBranch: "master",
     editLink: {
-      pattern: "https://github.com/vkm0303/material-vue3/docs/:path",
+      pattern: "https://github.com/akinocccc/material-vue3/docs/:path",
       text: "Edit this page on GitHub",
     },
     lastUpdated: "Update Date",
@@ -26,12 +32,18 @@ module.exports = {
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/FE-Alog/ui-library-vue3-starter",
+        link: "https://github.com/akinocccc/material-vue3",
       },
     ],
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2022 Akino Chen",
+    },
+  },
+  markdown: {
+    config(md) {
+      md.use(containerPreview);
+      md.use(componentPreview);
     },
   },
 };
@@ -45,7 +57,7 @@ function nav() {
     },
     {
       text: "Components",
-      link: "/examples/loading/loading",
+      link: "/examples/data/avatar",
       activeMatch: "/examples/",
     },
   ];
@@ -68,8 +80,8 @@ function sidebarGuide() {
 function sidebarComponent() {
   return [
     {
-      text: "Loading",
-      items: [{ text: "loading", link: "/examples/loading/loading" }],
+      text: "Data Display",
+      items: [{ text: "Avatar", link: "/examples/data/avatar" }],
     },
   ];
 }
