@@ -3,9 +3,10 @@ import { debugWarn } from "../error";
 
 const SCOPE = "utils/dom/style";
 
-export function addUnit(value?: string | number, defaultUnit = "px") {
-  if (!value) return "";
-  if (isNumber(value) || isStringNumber(value)) {
+export function addUnit(value: string | number, defaultUnit = "px") {
+  const isNumberType = isNumber(value) || isStringNumber(value);
+  if (!isNumberType && !value) return "";
+  if (isNumberType) {
     return `${value}${defaultUnit}`;
   } else if (isString(value)) {
     return value;

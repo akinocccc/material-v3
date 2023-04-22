@@ -1,7 +1,7 @@
 import type { AppContext } from "vue";
 import { NOOP } from "@vue/shared";
 import type { App, Plugin } from "@vue/runtime-core";
-import material from "./material";
+// import material from "./material";
 
 export type SFCWithInstall<T> = T & Plugin;
 
