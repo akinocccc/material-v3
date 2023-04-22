@@ -1,0 +1,25 @@
+.grid-layout {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: var(--vp-c-bg-mute);
+  .item {
+    &:nth-child(even) {
+      .grid-content {
+        background-color: var(--vp-c-text-3);
+      }
+    }
+
+    &:nth-child(odd) {
+      .grid-content {
+        background-color: var(--vp-c-text-4);
+      }
+    }
+    .grid-content {
+      border-radius: 6px;
+      color: var(--vp-c-text-2);
+      text-align: center;
+      line-height: 28px;
+    }
+  }
+}
