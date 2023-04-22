@@ -4,7 +4,7 @@ hero:
   image:
     src: /logo.png
     alt: Logo
-  name: Vue3-Material
+  name: Material-V3
   # text: The interesting ui components.
   tagline: Make it interesting.
   actions:
