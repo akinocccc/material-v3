@@ -41,13 +41,6 @@ const style = computed(() => {
         }
       });
     } else {
-      console.log(
-        gapKey,
-        props[gapKey],
-        ns.cssVarBlock({
-          [normalizedKey]: addUnit(gap),
-        })
-      );
       assign(
         style,
         ns.cssVarBlock({

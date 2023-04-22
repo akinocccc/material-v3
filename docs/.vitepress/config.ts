@@ -7,20 +7,20 @@ const { argv } = process;
 const env = argv[argv.length - 1];
 
 module.exports = {
-  title: "Material Vue3",
+  title: "Material-V3",
   description: "Make it interesting",
   lang: "en-US",
   cleanUrls: "without-subfolders",
   base: env === "dev" ? "/" : "/material-v3",
+  head: [["link", { rel: "fav icon", href: "/logo.svg" }]],
   themeConfig: {
     logo: "/logo.svg",
-    siteTitle: "material-v3",
     repo: "akinocccc/material-v3",
-    // repoLabel: "测试",
     docsDir: "./",
     docsBranch: "master",
     editLink: {
-      pattern: "https://github.com/akinocccc/material-v3/docs/:path",
+      pattern:
+        "https://github.com/akinocccc/material-v3/tree/master/docs/:path",
       text: "Edit this page on GitHub",
     },
     lastUpdated: "Update Date",
