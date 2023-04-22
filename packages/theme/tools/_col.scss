@@ -1,0 +1,36 @@
+@use "sass:math";
+
+@use "../common//var.scss" as *;
+@use "./mixins" as *;
+
+@mixin col-size($size) {
+  @include response($size) {
+    .#{$namespace}-grid-item-#{$size} {
+      display: block;
+      max-width: calc(
+        1 / get-css-var("grid", "columns") *
+          get-css-var("grid-item", #{$size}-span) * 100 * 1%
+      );
+      flex: 0 0
+        calc(
+          1 / get-css-var("grid", "columns") *
+            get-css-var("grid-item", #{$size}-span) * 100 * 1%
+        );
+    }
+
+    .#{$namespace}-grid-item-gap-#{$size} {
+      padding: calc(get-css-var("grid", row-gap-#{$size}) / 2)
+        calc(get-css-var("grid", col-gap-#{$size}) / 2);
+    }
+  }
+}
+
+@mixin col-hidden() {
+  @each $break-point-name, $value in $breakpoints-spec {
+    // .is-hidden-#{$break-point-name} {
+    //   @include response($break-point-name, $breakpoints-spec) {
+    //     display: none !important;
+    //   }
+    // }
+  }
+}

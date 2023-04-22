@@ -1,0 +1,41 @@
+@use "sass:map";
+
+@use "../tools/mixins" as *;
+@use "../tools/var" as *;
+@use "../common/var" as *;
+
+@include b(grid) {
+  @include set-component-css-var("grid", $grid);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: start;
+  // row-gap: get-css-var("grid", "row-gap");
+  // column-gap: get-css-var("grid", "col-gap");
+  box-sizing: border-box;
+
+  // justify-content state
+  @include is(justify-center) {
+    justify-content: center;
+  }
+  @include is(justify-end) {
+    justify-content: flex-end;
+  }
+  @include is(justify-space-between) {
+    justify-content: space-between;
+  }
+  @include is(justify-space-around) {
+    justify-content: space-around;
+  }
+  @include is(justify-space-evenly) {
+    justify-content: space-evenly;
+  }
+  // align-item state
+  @include is(align-center) {
+    align-items: center;
+  }
+  @include is(align-end) {
+    align-items: flex-end;
+  }
+}

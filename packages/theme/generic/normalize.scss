@@ -1,4 +1,5 @@
-@use "../common/transition.scss" as *;
+@use "../common/transition" as *;
+@use "../components/typography" as *;
 
 /**
  * Structure - The main styles for html and body tags
@@ -22,8 +23,6 @@ body {
   position: relative;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: Roboto, "Noto Sans", -apple-system, BlinkMacSystemFont,

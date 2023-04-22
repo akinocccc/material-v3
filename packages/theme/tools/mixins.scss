@@ -57,7 +57,7 @@
   $md-themes: $theme !global;
   $md-theme-name: $name !global;
 
-  @include md-base-theme;
+  @include base-theme;
 }
 
 /**
@@ -265,10 +265,20 @@
   #{$property}: var(--md-theme-#{$md-current-theme}-#{$type}#{variant}, $hex);
 }
 
-// ============= New Theme System =============
+// ============= New Theme System ============
+
+@mixin response($key, $map: $breakpoints) {
+  @if map-has-key($map, $key) {
+    @media only screen and #{unquote(map-get($map, $key))} {
+      @content;
+    }
+  } @else {
+    @warn "Undefined points: `#{$map}`";
+  }
+}
 
 // BEM
-@mixin md-b($block) {
+@mixin b($block) {
   $B: $namespace + $common-separator + $block !global;
 
   .#{$B} {
@@ -276,7 +286,7 @@
   }
 }
 
-@mixin md-m($modifier) {
+@mixin m($modifier) {
   $selector: &;
   $currentSelector: "";
   @each $unit in $modifier {
@@ -291,5 +301,11 @@
     #{$currentSelector} {
       @content;
     }
+  }
+}
+
+@mixin is($state) {
+  &.#{$state-prefix + $state} {
+    @content;
   }
 }

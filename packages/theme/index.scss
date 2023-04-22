@@ -1,4 +1,4 @@
-@use "base/normalize.scss";
+@use "generic/normalize.scss";
 @use "common/transition.scss";
 @use "var.scss";
 // component styles
@@ -8,6 +8,7 @@
 // @use './autocomplete.scss';
 @use "components/avatar.scss";
 @use "components/grid.scss";
+@use "components/grid-item.scss";
 // @use './backtop.scss';
 // @use './badge.scss';
 // @use './breadcrumb-item.scss';
