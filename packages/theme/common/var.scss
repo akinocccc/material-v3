@@ -1,9 +1,10 @@
 @use "sass:math";
 @use "sass:map";
 
+@use "../tools/colors";
 @use "../tools/functions" as *;
 
-$colors: get-colors();
+$base-colors: colors.$color-scheme;
 $colors-light: get-color-sheme(light);
 $colors-dark: get-color-sheme(dark);
 
