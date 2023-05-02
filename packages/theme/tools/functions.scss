@@ -1,7 +1,7 @@
 @use "sass:map";
 
 @use "config";
-@use "colors";
+@use "../common/colors" as colors;
 
 // md-bem('block', 'element', 'modifier') => 'md-block__element--modifier'
 @function md-bem($block, $element: "", $modifier: "") {
