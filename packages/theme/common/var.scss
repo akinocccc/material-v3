@@ -3,81 +3,12 @@
 
 @use "../tools/functions" as *;
 
-// types
-$types: primary, success, warning, danger, error, info;
+$colors: get-colors();
+$colors-light: get-color-sheme(light);
+$colors-dark: get-color-sheme(dark);
 
-// Color
-$colors: () !default;
-$colors: map.deep-merge(
-  (
-    "white": #ffffff,
-    "black": #212121,
-    "primary": (
-      "base": #6750a4,
-    ),
-    "success": (
-      "base": #67c23a,
-    ),
-    "warning": (
-      "base": #e6a23c,
-    ),
-    "danger": (
-      "base": #ff5252,
-    ),
-    "error": (
-      "base": #ff5252,
-    ),
-    "info": (
-      "base": #a3a3a3,
-    ),
-  ),
-  $colors
-);
-
-$color-white: map.get($colors, "white") !default;
-$color-black: map.get($colors, "black") !default;
-$color-primary: map.get($colors, "primary", "base") !default;
-$color-success: map.get($colors, "success", "base") !default;
-$color-warning: map.get($colors, "warning", "base") !default;
-$color-danger: map.get($colors, "danger", "base") !default;
-$color-error: map.get($colors, "error", "base") !default;
-$color-info: map.get($colors, "info", "base") !default;
-
-// https://sass-lang.com/documentation/values/maps#immutability
-// mix colors with white/black to generate light/dark level
-@mixin set-color-mix-level(
-  $type,
-  $number,
-  $mode: "light",
-  $mix-color: $color-white
-) {
-  $colors: map.deep-merge(
-    (
-      $type: (
-        "#{$mode}-#{$number}":
-          mix(
-            $mix-color,
-            map.get($colors, $type, "base"),
-            math.percentage(math.div($number, 10))
-          ),
-      ),
-    ),
-    $colors
-  ) !global;
-}
-
-// $colors.primary.light-i
-// --md-color-primary-light-i
-@each $type in $types {
-  @for $i from 1 through 9 {
-    @include set-color-mix-level($type, $i, "light", $color-white);
-  }
-}
-
-// --md-color-primary-dark-2
-@each $type in $types {
-  @include set-color-mix-level($type, 2, "dark", $color-black);
-}
+// $color-white: map-get($colors, "white");
+// $color-black: map-get($colors, "black");
 
 $text-color: () !default;
 $text-color: map.merge(
@@ -148,11 +79,11 @@ $border-radius: map.merge(
 $avatar: () !default;
 $avatar: map.merge(
   (
-    "text-color": get_css_var("color-white"),
-    "bg-color": get_css_var("text-color", "disabled"),
+    // "text-color": get_css_var("color-white"),
+    // "bg-color": get_css_var("text-color", "disabled"),
     "text-size": calc(get_css_var("avatar", "size") - 16px),
     "icon-size": 28px,
-    "border-radius": get_css_var("border-radius-base"),
+    "border-radius": get_css_var("border-radius-base")
   ),
   $avatar
 );
@@ -212,3 +143,13 @@ $breakpoints-spec: (
   // 'lg-and-down': '(max-width: #{$xl - 1})',
   "xl-only": "(min-width: #{$xl})",
 ) !default;
+
+$badge: () !default;
+$badge: map.merge(
+  (
+    "small": "18px",
+    "medium": "24px",
+    "large": "32px",
+  ),
+  $badge
+);

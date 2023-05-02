@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@use "../common//var.scss" as *;
+@use "../common/var.scss" as *;
 @use "./mixins" as *;
 
 @mixin col-size($size) {

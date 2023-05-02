@@ -11,14 +11,7 @@
 
 // common
 :root {
-  @include set-css-var-value("color-white", $color-white);
-  @include set-css-var-value("color-black", $color-black);
-
-  // get rgb
-  @each $type in (primary, success, warning, danger, error, info) {
-    @include set-css-color-rgb($type);
-  }
-
+  @include set-component-css-var("color", $colors);
   // // Typography
   // @include set-component-css-var("font-size", $font-size);
   // @include set-component-css-var("font-family", $font-family);
@@ -46,26 +39,18 @@
 
 // for light
 :root {
-  color-scheme: light;
-
-  @include set-css-var-value("color-white", $color-white);
-  @include set-css-var-value("color-black", $color-black);
-
-  // --md-color-#{$type}
-  // --md-color-#{$type}-light-{$i}
-  @each $type in (primary, success, warning, danger, error, info) {
-    @include set-css-color-type($colors, $type);
-  }
+  // color-scheme: light;
 
   // color-scheme
-  // Background --md-bg-color-#{$type}
-  @include set-component-css-var("bg-color", $bg-color);
-  // --md-text-color-#{$type}
-  @include set-component-css-var("text-color", $text-color);
-  // --md-border-color-#{$type}
-  @include set-component-css-var("border-color", $border-color);
-  // Fill --md-fill-color-#{$type}
-  @include set-component-css-var("fill-color", $fill-color);
+  @include set-component-css-var("color", $colors-light);
+  // // Background --md-bg-color-#{$type}
+  // @include set-component-css-var("bg-color", $bg-color);
+  // // --md-text-color-#{$type}
+  // @include set-component-css-var("text-color", $text-color);
+  // // --md-border-color-#{$type}
+  // @include set-component-css-var("border-color", $border-color);
+  // // Fill --md-fill-color-#{$type}
+  // @include set-component-css-var("fill-color", $fill-color);
 
   // // Box-shadow
   // // --md-box-shadow-#{$type}
@@ -89,4 +74,9 @@
 
   // Svg
   // @include css-var-from-global("svg-monochrome-grey", "border-color");
+}
+
+.theme-dark {
+  // color-scheme
+  @include set-component-css-var("color", $colors-dark);
 }
