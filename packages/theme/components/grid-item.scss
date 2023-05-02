@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "sass:map";
-@use "../common/var" as *;
+
 @use "../tools/col" as *;
 @use "../tools/mixins" as *;
 
@@ -12,13 +12,13 @@ $maxSize: (
   lg: xl,
 );
 
-[class*="#{$namespace}-grid-item"] {
+@include b(grid-item) {
   box-sizing: border-box;
   max-width: 100%;
   flex: 0 0 100%;
 }
 
-.#{$namespace}-grid-item {
+@include b(grid-item) {
   max-width: calc(
     1 / get-css-var("grid", "columns") * get-css-var("grid-item", "span") * 100 *
       1%

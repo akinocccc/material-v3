@@ -2,7 +2,20 @@
 
 @use "../tools/mixins" as *;
 @use "../tools/var" as *;
-@use "../common/var" as *;
+
+$grid: (
+  "row-gap-xs": 0,
+  "row-gap-sm": 0,
+  "row-gap-md": 0,
+  "row-gap-lg": 0,
+  "row-gap-xl": 0,
+  "col-gap-xs": 0,
+  "col-gap-sm": 0,
+  "col-gap-md": 0,
+  "col-gap-lg": 0,
+  "col-gap-xl": 0,
+  "columns": 12,
+);
 
 @include b(grid) {
   @include set-component-css-var("grid", $grid);

@@ -1,69 +1,17 @@
 @use "sass:math";
 @use "sass:map";
 
+@use "../common/colors" as colors;
 @use "../tools/functions" as *;
 
-$colors: get-colors();
+$base-colors: colors.$color-scheme;
 $colors-light: get-color-sheme(light);
 $colors-dark: get-color-sheme(dark);
 
-// $color-white: map-get($colors, "white");
-// $color-black: map-get($colors, "black");
-
-$text-color: () !default;
-$text-color: map.merge(
-  (
-    "primary": #303133,
-    "regular": #606266,
-    "secondary": #909399,
-    "placeholder": #a8abb2,
-    "disabled": #c0c4cc,
-  ),
-  $text-color
-);
-
-$border-color: () !default;
-$border-color: map.merge(
-  (
-    "": #dcdfe6,
-    "light": #e4e7ed,
-    "lighter": #ebeef5,
-    "extra-light": #f2f6fc,
-    "dark": #d4d7de,
-    "darker": #cdd0d6,
-  ),
-  $border-color
-);
-
-$fill-color: () !default;
-$fill-color: map.merge(
-  (
-    "": #f0f2f5,
-    "light": #f5f7fa,
-    "lighter": #fafafa,
-    "extra-light": #fafcff,
-    "dark": #ebedf0,
-    "darker": #e6e8eb,
-    "blank": #ffffff,
-  ),
-  $fill-color
-);
-
-// Background
-$bg-color: () !default;
-$bg-color: map.merge(
-  (
-    "": #ffffff,
-    "page": #f2f3f5,
-    "overlay": #ffffff,
-  ),
-  $bg-color
-);
-
-// Border
-$border-width: 1px !default;
-$border-style: solid !default;
-$border-color-hover: get_css_var("text-color", "disabled") !default;
+$border-width: 1px;
+$border-style: solid;
+$border-color: get-css-var("color", "on-secondary");
+$border-color-hover: get-css-var("color", "primary");
 
 $border-radius: () !default;
 $border-radius: map.merge(
@@ -74,46 +22,6 @@ $border-radius: map.merge(
     "circle": 100%,
   ),
   $border-radius
-);
-
-$avatar: () !default;
-$avatar: map.merge(
-  (
-    // "text-color": get_css_var("color-white"),
-    // "bg-color": get_css_var("text-color", "disabled"),
-    "text-size": calc(get_css_var("avatar", "size") - 16px),
-    "icon-size": 28px,
-    "border-radius": get_css_var("border-radius-base")
-  ),
-  $avatar
-);
-
-$avatar-size: () !default;
-$avatar-size: map.merge(
-  (
-    "large": 64px,
-    "default": 40px,
-    "small": 24px,
-  ),
-  $avatar-size
-);
-
-$grid: () !default;
-$grid: map.merge(
-  (
-    "row-gap-xs": 0,
-    "row-gap-sm": 0,
-    "row-gap-md": 0,
-    "row-gap-lg": 0,
-    "row-gap-xl": 0,
-    "col-gap-xs": 0,
-    "col-gap-sm": 0,
-    "col-gap-md": 0,
-    "col-gap-lg": 0,
-    "col-gap-xl": 0,
-    "columns": 12,
-  ),
-  $grid
 );
 
 // Break-point
@@ -143,13 +51,3 @@ $breakpoints-spec: (
   // 'lg-and-down': '(max-width: #{$xl - 1})',
   "xl-only": "(min-width: #{$xl})",
 ) !default;
-
-$badge: () !default;
-$badge: map.merge(
-  (
-    "small": "18px",
-    "medium": "24px",
-    "large": "32px",
-  ),
-  $badge
-);

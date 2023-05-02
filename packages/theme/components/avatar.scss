@@ -3,8 +3,20 @@
 
 @use "../tools/mixins" as *;
 @use "../tools/var" as *;
-@use "../common/var" as *;
 @use "../common/transition" as *;
+
+$avatar: (
+  // "text-color": get_css_var("color-white"),
+  // "bg-color": get_css_var("text-color", "disabled"),
+  "text-size": calc(get_css_var("avatar", "size") - 16px),
+  "icon-size": 28px,
+  "border-radius": get_css_var("border-radius-base")
+);
+$avatar-size: (
+  "large": 64px,
+  "default": 40px,
+  "small": 24px,
+);
 
 @include b(avatar) {
   @include set-component-css-var("avatar", $avatar);

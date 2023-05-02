@@ -1,0 +1,143 @@
+@use "sass:map";
+@use "typeface";
+
+/* rem: 1rem = 16px */
+$typescale: (
+  // ============= Body large ============
+  "body-large":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1.5rem,
+      "size": 1rem,
+      "tracking": 0.031rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Body medium ============
+  "body-medium":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1.25rem,
+      "size": 0.875rem,
+      "tracking": 0.016rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Body small ============
+  "body-small":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1rem,
+      "size": 0.75rem,
+      "tracking": 0.025rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Display large ============
+  "display-large":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 4rem,
+      "size": 3.562rem,
+      "tracking": -0.016rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Display medium ============
+  "display-medium":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 3.25rem,
+      "size": 2.812rem,
+      "tracking": 0rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Display small ============
+  "display-small":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 2.75rem,
+      "size": 2.25rem,
+      "tracking": 0rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Headline large ============
+  "headline-large":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 2.5rem,
+      "size": 2rem,
+      "tracking": 0rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Headline medium ============
+  "headline-medium":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 2.25rem,
+      "size": 1.75rem,
+      "tracking": 0rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Headline small ============
+  "headline-small":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 2rem,
+      "size": 1.5rem,
+      "tracking": 0rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Label large ============
+  "label-large":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1.25rem,
+      "size": 0.875rem,
+      "tracking": 0.006rem,
+      "weight": map.get(typeface.$typeface, "font-weight-medium"),
+      "weight-prominent": map.get(typeface.$typeface, "font-weight-bold"),
+    ),
+  // ============= Label medium ============
+  "label-medium":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1rem,
+      "size": 0.75rem,
+      "tracking": 0.031rem,
+      "weight": map.get(typeface.$typeface, "font-weight-medium"),
+      "weight-prominent": map.get(typeface.$typeface, "font-weight-bold"),
+    ),
+  // ============= Label small ============
+  "label-small":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1rem,
+      "size": 0.688rem,
+      "tracking": 0.031rem,
+      "weight": map.get(typeface.$typeface, "font-weight-medium"),
+    ),
+  // ============= Title large ============
+  "title-large":
+    (
+      "font": map.get(typeface.$typeface, "brand"),
+      "line-height": 1.75rem,
+      "size": 1.375rem,
+      "tracking": 0rem,
+      "weight": map.get(typeface.$typeface, "font-weight-regular"),
+    ),
+  // ============= Title medium ============
+  "title-medium":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1.5rem,
+      "size": 1rem,
+      "tracking": 0.009rem,
+      "weight": map.get(typeface.$typeface, "font-weight-medium"),
+    ),
+  // ============= Title small ============
+  "title-small":
+    (
+      "font": map.get(typeface.$typeface, "plain"),
+      "line-height": 1.25rem,
+      "size": 0.875rem,
+      "tracking": 0.006rem,
+      "weight": map.get(typeface.$typeface, "font-weight-medium"),
+    )
+);
