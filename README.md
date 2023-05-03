@@ -1,6 +1,46 @@
-# material-v3
+# 🚧 Material V3
 
-## Start
+## Components
+
+| Name               | Alpha | Beta | Stable |
+| ------------------ | :---: | :--: | :----: |
+| Avatar             |  ✅   |  ❌  |   ❌   |
+| Badge              |  ✅   |  ❌  |   ❌   |
+| Bottom app bar     |  ❌   |  ❌  |   ❌   |
+| Bottom sheets      |  ❌   |  ❌  |   ❌   |
+| Button             |  ❌   |  ❌  |   ❌   |
+| Card               |  ❌   |  ❌  |   ❌   |
+| Carousel           |  ❌   |  ❌  |   ❌   |
+| Checkbox           |  ❌   |  ❌  |   ❌   |
+| Chips              |  ❌   |  ❌  |   ❌   |
+| Date picker        |  ❌   |  ❌  |   ❌   |
+| Dialog             |  ❌   |  ❌  |   ❌   |
+| Divider            |  ❌   |  ❌  |   ❌   |
+| Elevation          |  🚧   |  ❌  |   ❌   |
+| FAB                |  ❌   |  ❌  |   ❌   |
+| Form               |  ❌   |  ❌  |   ❌   |
+| Grid               |  ✅   |  ❌  |   ❌   |
+| Icon button        |  ❌   |  ❌  |   ❌   |
+| List               |  ❌   |  ❌  |   ❌   |
+| Menu               |  ❌   |  ❌  |   ❌   |
+| Navigation bar     |  ❌   |  ❌  |   ❌   |
+| Navigation rail    |  ❌   |  ❌  |   ❌   |
+| Progress indicator |  ❌   |  ❌  |   ❌   |
+| Radio button       |  ❌   |  ❌  |   ❌   |
+| Search             |  ❌   |  ❌  |   ❌   |
+| Segmented button   |  ❌   |  ❌  |   ❌   |
+| Side sheets        |  ❌   |  ❌  |   ❌   |
+| Select             |  ❌   |  ❌  |   ❌   |
+| Slider             |  ❌   |  ❌  |   ❌   |
+| Snackbar           |  ❌   |  ❌  |   ❌   |
+| Switch             |  ❌   |  ❌  |   ❌   |
+| Tabs               |  ❌   |  ❌  |   ❌   |
+| Text field         |  ❌   |  ❌  |   ❌   |
+| Time picker        |  ❌   |  ❌  |   ❌   |
+| Tooltip            |  ❌   |  ❌  |   ❌   |
+| Top app bars       |  ❌   |  ❌  |   ❌   |
+
+## Dev guide
 
 ### Install
 
@@ -15,16 +55,6 @@ pnpm dev
 ```
 
 You can import the component to "/example/app.example.vue" which you want to preview.
-
-## Preview
-
-Preview the built components.
-
-```shell
-pnpm docs:dev
-```
-
-you can see the result **after building the packages**.
 
 ## Build
 
