@@ -100,6 +100,10 @@ export const useNamespace = (
   const cssVarBlockName = (name: string) =>
     `--${namespace.value}-${block}-${name}`;
 
+  const getCssVar = (name: string) => `var(--${namespace.value}-${name})`;
+  const getCssVarBlock = (name: string, blockOverrides: string = block) =>
+    `var(--${namespace.value}-${blockOverrides}-${name})`;
+
   return {
     namespace,
     b,
@@ -115,6 +119,8 @@ export const useNamespace = (
     cssVarName,
     cssVarBlock,
     cssVarBlockName,
+    getCssVar,
+    getCssVarBlock,
   };
 };
 
