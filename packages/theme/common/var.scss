@@ -24,6 +24,12 @@ $border-radius: map.merge(
   $border-radius
 );
 
+$z-index: (
+  "bottom": -1,
+  "normal": 0,
+  "top": 99999,
+);
+
 // Break-point
 $sm: 600px !default;
 $md: 900px !default;
