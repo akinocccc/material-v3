@@ -1,0 +1,65 @@
+@use "sass:map";
+
+@use "../common/shape";
+@use "../common/typescale";
+@use "../common/var";
+@use "../tools/mixins" as *;
+
+@include b(badge) {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+
+  @include e(content) {
+    display: inline-block;
+    border-radius: map.get(shape.$corner, "full");
+    background-color: get-css-var("badge", "background-color");
+    color: get-css-var("badge", "label-color");
+
+    // The shape of square
+    @include is(square) {
+      border-radius: map.get(var.$border-radius, "base");
+    }
+  }
+
+  // Position
+  @include m(top) {
+    right: 6px;
+    top: 0;
+    transform: translate(100%, -50%);
+  }
+  @include m(bottom) {
+    right: 6px;
+    bottom: 0;
+    transform: translate(100%, 50%);
+  }
+
+  // Size
+  @include m(small) {
+    right: 3px;
+    width: 6px;
+    height: 6px;
+  }
+
+  @include m(large) {
+    width: auto;
+    height: 16px;
+    padding: 0 5px;
+    line-height: 16px;
+    letter-spacing: map.get(typescale.$typescale, "label-small", "tracking");
+    font-weight: map.get(typescale.$typescale, "label-small", "weight");
+    font-size: map.get(typescale.$typescale, "label-small", "size");
+
+    &::first-letter {
+      letter-spacing: normal;
+    }
+  }
+}
+
+// Wrap
+@include b(badge-wrap) {
+  @include e(content) {
+    position: absolute;
+    z-index: map.get(var.$z-index, "normal");
+  }
+}
