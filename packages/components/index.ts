@@ -4,6 +4,7 @@ export * from "./MdLayout";
 export * from "./MdAvatar";
 export * from "./MdGrid";
 export * from "./MdBadge";
+export * from "./MdElevation";
 
 // export { Loading, LoadingPlus, Text };
 

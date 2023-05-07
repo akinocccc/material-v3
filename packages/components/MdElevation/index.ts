@@ -1,3 +1,5 @@
-import "./elevation.scss";
+import Elevation from "./MdElevation.vue";
+import { withInstall } from "@material/utils/install";
 
-export default () => {};
+export const MdElevation = withInstall(Elevation);
+export default MdElevation;
