@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, useSlots } from "vue";
+import { computed, useSlots } from "vue";
 import { useNamespace } from "@material/hooks/useNamespace";
 import { badgeProps } from "./MdBadge";
 import { isNumber } from "@material/utils";
@@ -15,7 +15,16 @@ const props = defineProps(badgeProps);
 const defaultSlot = useSlots().default;
 const ns = useNamespace("badge");
 
-const badgeContent = ref(props.size === "small" ? "" : props.content);
+const badgeContent = computed(() => {
+  const { content, max, size } = props;
+  if (size === "small") {
+    return "";
+  }
+  if (isNumber(content) && content > max) {
+    return `${max}+`;
+  }
+  return content;
+});
 
 const wrapClassList = computed(() => {
   const classList = [ns.b()];
@@ -35,7 +44,6 @@ const contentClassList = computed(() => {
     square && classList.push(ns.is("square"));
     if (isNumber(content) && content > max) {
       classList.push(ns.is("max"));
-      badgeContent.value = `${max}+`;
     }
   } else {
     classList.push(ns.m("circle"));

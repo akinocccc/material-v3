@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts" name="MdAvatar">
-import { computed, ref, watch } from "vue";
+import { computed, ref, useSlots, watch } from "vue";
 import { avatarProps, avatarEmits } from "./MdAvatar";
 // import useTheme from "@material/hooks/useTheme";
 import { useNamespace } from "@material/hooks/useNamespace";
@@ -28,6 +28,7 @@ import type { CSSProperties } from "vue";
 
 const props = defineProps(avatarProps);
 const emit = defineEmits(avatarEmits);
+const defaultSlot = useSlots().default;
 
 const ns = useNamespace("avatar");
 
@@ -51,9 +52,12 @@ const sizeStyle = computed(() => {
 });
 
 const bgColorStyle = computed(() => {
-  const { src, color } = props;
-  return !src && isString(color)
-    ? (ns.cssVarBlock({ "bg-color": color }) as CSSProperties)
+  const { type } = props;
+  return defaultSlot && isString(type)
+    ? (ns.cssVarBlock({
+        "bg-color": ns.getCssVarBlock(props.type, "color"),
+        "text-color": ns.getCssVarBlock(`on-${props.type}`, "color"),
+      }) as CSSProperties)
     : {};
 });
 

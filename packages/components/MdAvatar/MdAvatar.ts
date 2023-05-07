@@ -29,9 +29,12 @@ export const avatarProps = buildProps({
   /**
    * @description avatar backgroud color for text placeholder.
    */
-  color: {
+  type: {
     type: String,
-    default: "",
+    default: "secondary",
+    values: ["primary", "error", "secondary", "tertiary"],
+    validator: (value) =>
+      ["primary", "error", "secondary", "tertiary"].includes(value),
   },
   /**
    * @description representation type to icon, more info on icon component.

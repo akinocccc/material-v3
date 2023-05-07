@@ -1,0 +1,84 @@
+@use "sass:map";
+
+@use "../common/var";
+@use "../tools/mixins" as *;
+
+@include b(elevation) {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transition-duration: inherit;
+    transition-timing-function: inherit;
+    transition-property: box-shadow, opacity;
+  }
+
+  // Key box shadow
+  &::before {
+    // level0: box-shadow: 0px 0px 0px 0px;
+    // level1: box-shadow: 0px 1px 2px 0px;
+    // level2: box-shadow: 0px 1px 2px 0px;
+    // level3: box-shadow: 0px 1px 3px 0px;
+    // level4: box-shadow: 0px 2px 3px 0px;
+    // level5: box-shadow: 0px 4px 4px 0px;
+
+    $level: get-css-var("elevation", "level");
+
+    // $y(level1): 1 = 1
+    // $y(level2): 1 = 1
+    // $y(level3): 1 = 1
+    // $y(level4): 2 * 4 - 6 = 2
+    // $y(level5): 2 * 5 - 6 = 4
+    $y: calc(1px * clamp(1, 2 * $level - 6, 4));
+
+    // $blur(level1): 0 + 2 = 2
+    // $blur(level2): 0 + 2 = 2
+    // $blur(level3): 1 + 2 = 3
+    // $blur(level4): 2 + 1 = 3
+    // $blur(level5): 3 + 1 = 4
+    $blur: calc(1px * (clamp(0, $level - 2, 3) + clamp(1, 5 - $level, 2)));
+
+    box-shadow: 0px $y $blur 0px get-css-var("color", "shadow");
+    opacity: 0.3;
+  }
+
+  // Ambient box shadow
+  &::after {
+    // level0: box-shadow: 0px 0px 0px 0px;
+    // level1: box-shadow: 0px 1px 3px 1px;
+    // level2: box-shadow: 0px 2px 6px 2px;
+    // level3: box-shadow: 0px 4px 8px 3px;
+    // level4: box-shadow: 0px 6px 10px 4px;
+    // level5: box-shadow: 0px 8px 12px 6px;
+
+    $level: get-css-var("elevation", "level");
+
+    // $y(level1): 1 = 1
+    // $y(level2): 2 * 2 - 2 = 2
+    // $y(level3): 2 * 3 - 2 = 4
+    // $y(level4): 2 * 4 - 2 = 6
+    // $y(level5): 2 * 5 - 2 = 8
+    $y: calc(1px * clamp(1, 2 * $level - 2, 8));
+
+    // $blur(level1): 2 * 1 + 1 = 3
+    // $blur(level2): 2 * 2 + 2 = 6
+    // $blur(level3): 2 * 3 + 2 = 8
+    // $blur(level4): 2 * 4 + 2 = 10
+    // $blur(level5): 2 * 5 + 2 = 12
+    $blur: calc(1px * (clamp(3, 2 * $level, 12) + clamp(1, $level, 2)));
+
+    // $spread(level1): 1 + 0 = 1
+    // $spread(level2): 2 + 0 = 2
+    // $spread(level3): 3 + 0 = 3
+    // $spread(level4): 4 + 0 = 4
+    // $spread(level5): 5 + 1 = 6
+    $spread: calc(1px * ($level + clamp(0, $level - 4, 1)));
+
+    box-shadow: 0px $y $blur $spread get-css-var("color", "shadow");
+    opacity: 0.15;
+  }
+}

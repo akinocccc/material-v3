@@ -6,11 +6,11 @@
 @use "../common/transition" as *;
 
 $avatar: (
-  // "text-color": get_css_var("color-white"),
-  // "bg-color": get_css_var("text-color", "disabled"),
+  "bg-color": get_css_var("avatar", "bg-color"),
+  "text-color": get_css_var("avatar", "text-color"),
   "text-size": calc(get_css_var("avatar", "size") - 16px),
   "icon-size": 28px,
-  "border-radius": get_css_var("border-radius-base")
+  "border-radius": get_css_var("border-radius-base"),
 );
 $avatar-size: (
   "large": 64px,
@@ -44,7 +44,6 @@ $avatar-size: (
   will-change: color, background-color;
   color: map.get($avatar, "text-color");
   font-size: map.get($avatar, "text-size");
-  letter-spacing: -0.05em;
   vertical-align: middle;
 
   @include m(circle) {
