@@ -1,7 +1,7 @@
 {
   "name": "material-v3",
   "packageManager": "pnpm@7.12.1",
-  "private": "true",
+  "private": false,
   "version": "0.0.1",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -29,7 +29,6 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
-    "@types/lodash-es": "^4.17.7",
     "@vue-macros/reactivity-transform": "^0.3.4",
     "@vue/shared": "^3.2.47",
     "@vueuse/core": "^9.13.0",
@@ -41,8 +40,13 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.11.2",
     "@vitejs/plugin-vue": "^3.1.2",
+    "@vue/eslint-config-prettier": "^7.1.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/runtime-core": "^3.2.41",
     "commitizen": "^4.2.5",
     "csstype": "^3.1.2",
@@ -54,6 +58,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
     "sass": "^1.55.0",
+    "semantic-release": "^21.0.2",
     "typescript": "^4.6.4",
     "vite": "^3.1.2",
     "vite-plugin-dts": "^1.6.6",
@@ -65,5 +70,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }

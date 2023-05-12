@@ -81,7 +81,10 @@ function sidebarComponent() {
   return [
     {
       text: "Basic",
-      items: [{ text: "Grid", link: "/components/basic/grid" }],
+      items: [
+        { text: "Elevation", link: "/components/basic/elevation" },
+        { text: "Grid", link: "/components/basic/grid" },
+      ],
     },
     {
       text: "Data Display",

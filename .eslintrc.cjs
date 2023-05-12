@@ -20,6 +20,7 @@ module.exports = {
   },
   rules: {
     "vue/multi-word-component-names": "off",
+    "vue/prefer-import-from-vue": "off",
   },
   settings: {
     "import/resolver": {
