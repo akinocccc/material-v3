@@ -22,8 +22,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Lint
+        run: pnpm lint
+
       - name: Install
-        run: yarn && npm audit fix
+        run: pnpm && pnpm audit fix
+
+      - name: Build
+        run: pnpm build
 
       - name: Pubilsh
         env:
