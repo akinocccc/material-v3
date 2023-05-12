@@ -1,7 +1,12 @@
 <template>
   <md-grid class="grid" :row-gap="20" :col-gap="20">
-    <md-grid-item class="grid-item" :span="2" v-for="level in levels">
-      <md-elevation class="elevation" :level="level" :key="level">
+    <md-grid-item
+      class="grid-item"
+      :span="2"
+      v-for="level in levels"
+      :key="level"
+    >
+      <md-elevation class="elevation" :level="level">
         <div class="content">level{{ level }}</div>
       </md-elevation>
     </md-grid-item>

@@ -1,5 +1,5 @@
-import { proxyRefs } from "@vue/runtime-core";
-import type { App } from "@vue/runtime-core";
+import { proxyRefs } from "vue";
+import type { App } from "vue";
 // import "@material/base/index.scss";
 import useTheme from "@material/hooks/useTheme";
 
