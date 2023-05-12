@@ -45,6 +45,7 @@
     "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.11.2",
     "@vitejs/plugin-vue": "^3.1.2",
+    "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/runtime-core": "^3.2.41",
     "commitizen": "^4.2.5",
