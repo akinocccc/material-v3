@@ -28,7 +28,7 @@ jobs:
           version: 7.12.1
 
       - name: Install
-        run: pnpm && pnpm audit fix
+        run: pnpm i && pnpm audit fix
 
       - name: Lint
         run: pnpm lint
