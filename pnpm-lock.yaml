@@ -2431,6 +2431,18 @@ packages:
       prettier: 2.7.1
     dev: true
 
+  /@vue/eslint-config-prettier/7.1.0_znq2sm4m5bonjw4qqm6mwhbe2q:
+    resolution: {integrity: sha512-Pv/lVr0bAzSIHLd9iz0KnvAr4GKyCEl+h52bc4e5yWuDVtLgFwycF7nrbWTAQAS+FU6q1geVd07lc6EWfJiWKQ==}
+    peerDependencies:
+      eslint: '>= 7.28.0'
+      prettier: '>= 2.0.0'
+    dependencies:
+      eslint: 8.25.0
+      eslint-config-prettier: 8.8.0_eslint@8.25.0
+      eslint-plugin-prettier: 4.2.1_k6vo62r3ygdzdmt22fnjfo4mca
+      prettier: 2.7.1
+    dev: true
+
   /@vue/eslint-config-typescript/11.0.3_qsmcthc5ijamuzfurbvbpwqwnm:
     resolution:
       {
@@ -4075,6 +4087,15 @@ packages:
       eslint: 8.25.0
     dev: true
 
+  /eslint-config-prettier/8.8.0_eslint@8.25.0:
+    resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.25.0
+    dev: true
+
   /eslint-plugin-cypress/2.12.1_eslint@8.25.0:
     resolution:
       {
@@ -4370,6 +4391,10 @@ packages:
       {
         integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==,
       }
+    dev: true
+
+  /fast-diff/1.2.0:
+    resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
     dev: true
 
   /fast-glob/3.2.12:
@@ -6895,6 +6920,13 @@ packages:
         integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==,
       }
     engines: { node: ">=6.0.0" }
+    dependencies:
+      fast-diff: 1.2.0
+    dev: true
+
+  /prettier-linter-helpers/1.0.0:
+    resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
+    engines: {node: '>=6.0.0'}
     dependencies:
       fast-diff: 1.2.0
     dev: true
