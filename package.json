@@ -1,7 +1,7 @@
 {
   "name": "material-v3",
   "packageManager": "pnpm@7.12.1",
-  "private": "true",
+  "private": false,
   "version": "0.0.1",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -29,7 +29,6 @@
     "vue": "^3.2.0"
   },
   "dependencies": {
-    "@types/lodash-es": "^4.17.7",
     "@vue-macros/reactivity-transform": "^0.3.4",
     "@vue/shared": "^3.2.47",
     "@vueuse/core": "^9.13.0",
@@ -41,6 +40,7 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@rushstack/eslint-patch": "^1.1.4",
+    "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.11.2",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vue/runtime-core": "^3.2.41",
@@ -65,5 +65,9 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
