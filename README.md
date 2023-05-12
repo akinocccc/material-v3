@@ -16,7 +16,7 @@
 | Date picker        |  ❌   |  ❌  |   ❌   |
 | Dialog             |  ❌   |  ❌  |   ❌   |
 | Divider            |  ❌   |  ❌  |   ❌   |
-| Elevation          |  🚧   |  ❌  |   ❌   |
+| Elevation          |  ✅   |  ❌  |   ❌   |
 | FAB                |  ❌   |  ❌  |   ❌   |
 | Form               |  ❌   |  ❌  |   ❌   |
 | Grid               |  ✅   |  ❌  |   ❌   |
