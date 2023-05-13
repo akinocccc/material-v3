@@ -1,10 +1,8 @@
 // import { App } from "vue";
-export * from "./MdElevation";
-export * from "./MdLayout";
 export * from "./MdAvatar";
-export * from "./MdGrid";
 export * from "./MdBadge";
 export * from "./MdElevation";
+export * from "./MdGrid";
 
 // export { Loading, LoadingPlus, Text };
 
