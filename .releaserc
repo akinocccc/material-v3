@@ -36,7 +36,14 @@
     [
       "@semantic-release/github",
       {
-        "addReleases": "top"
+        "addReleases": "top",
+        "assets": [
+          {
+            "path": "dist",
+            "label": "package"
+          }
+        ],
+        "successComment": ":tada: This issue has been resolved in version ${nextRelease.version} :tada:\n\nThe release is available on [GitHub release](<github_release_url>)"
       }
     ]
   ]
