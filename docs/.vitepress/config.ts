@@ -12,7 +12,7 @@ module.exports = {
   lang: "en-US",
   cleanUrls: "without-subfolders",
   base: env === "dev" ? "/" : "/material-v3",
-  head: [["link", { rel: "fav icon", href: "/logo.svg" }]],
+  head: [["link", { rel: "fav icon", href: "./logo.svg" }]],
   themeConfig: {
     logo: "/logo.svg",
     repo: "akinocccc/material-v3",
