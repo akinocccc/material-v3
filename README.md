@@ -9,13 +9,13 @@
 | Bottom app bar     |  ❌   |  ❌  |   ❌   |
 | Bottom sheets      |  ❌   |  ❌  |   ❌   |
 | Button             |  ❌   |  ❌  |   ❌   |
-| Card               |  ❌   |  ❌  |   ❌   |
+| Card               |  🚧   |  ❌  |   ❌   |
 | Carousel           |  ❌   |  ❌  |   ❌   |
 | Checkbox           |  ❌   |  ❌  |   ❌   |
 | Chips              |  ❌   |  ❌  |   ❌   |
 | Date picker        |  ❌   |  ❌  |   ❌   |
 | Dialog             |  ❌   |  ❌  |   ❌   |
-| Divider            |  ❌   |  ❌  |   ❌   |
+| Divider            |  🚧   |  ❌  |   ❌   |
 | Elevation          |  ✅   |  ❌  |   ❌   |
 | FAB                |  ❌   |  ❌  |   ❌   |
 | Form               |  ❌   |  ❌  |   ❌   |
