@@ -1,9 +1,9 @@
-name: deploy docs site
+name: Docs deploy
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy-gh-pages:
@@ -27,6 +27,14 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i
+
+      - name: Cache pnpm dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Build
         run: pnpm docs:build
