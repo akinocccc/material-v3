@@ -1,5 +1,7 @@
 # 🚧 Material V3
 
+**‼ I'm preparing for my master's exam, so the development progress will be slow, but if someone opens the PR, I'll deal with it as soon as possible. ‼**
+
 ## Components
 
 | Name               | Alpha | Beta | Stable |
